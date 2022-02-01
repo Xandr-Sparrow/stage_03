@@ -9,6 +9,10 @@ let numbers = [4, 3, 10, 14, 32];
 function f_some() {
     console.log(`Метод some`);
 
+    function fun_some() {
+        return;
+    }
+
     function zero_big(numbers) {
         return numbers > 0;
     }
@@ -67,9 +71,14 @@ f_reduce();
 
 function f_forEach() {
     console.log(`Метод forEach`);
-    numbers.forEach((item, index) => {
-        console.log(`На ${index + 1} месте находится ${item}`);
-    });
+
+    function fun_forEach() {
+        for (let i = 0; i < numbers.length; i++) {
+            console.log(numbers[i]);
+            return numbers[i];
+        }
+    };
+    fun_forEach();
 }
 
 f_forEach();
