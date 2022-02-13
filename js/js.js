@@ -35,12 +35,10 @@ function f_forEach() {
     let inner = "";
     for (const x of numbers) {
         console.log(x);
-        inner += (x + "\n");
+        inner += `<p>${x}</p>`;
     }
     document.getElementById("foreach").innerHTML = inner;
 }
-
-f_forEach();
 
 
 function f_filter() {
