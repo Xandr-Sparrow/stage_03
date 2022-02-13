@@ -10,56 +10,58 @@ function f_some() {
 
 }
 
-f_some();
 
 function f_split() {
 
 }
 
-f_split();
 
 function f_include() {
 
 }
 
-f_include();
 
 function f_map() {
 
 }
 
-f_map();
 
 function f_reduce() {
 
 }
 
-f_reduce();
 
 function f_forEach() {
-    for (let i = 0; i <= numbers.length; i++) {
-        if (i) {
-            console.log(numbers[i]);
-        }
+    let inner = "";
+    for (const x of numbers) {
+        console.log(x);
+        inner += (x + "\n");
     }
+    document.getElementById("foreach").innerHTML = inner;
 }
 
 f_forEach();
+
 
 function f_filter() {
 
 }
 
-f_filter();
 
 function f_find() {
 
 }
 
-f_find();
 
 function f_findIndex() {
 
 }
 
-f_findIndex();
+
+function inner_html(div_id, fun) {
+    document.getElementById(div_id).innerHTML = fun + '\n';
+}
+
+function inner_promt() {
+
+}
