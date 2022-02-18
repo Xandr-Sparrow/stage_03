@@ -27,7 +27,13 @@ function f_map() {
 
 
 function f_reduce() {
-
+    let inner = "";
+    let sum_num = 0;
+    for (const x of numbers) {
+        console.log(sum_num += x);
+    }
+    inner += `<p>${sum_num}</p>`;
+    document.getElementById("reduce").innerHTML = inner;
 }
 
 
@@ -47,19 +53,29 @@ function f_filter() {
 
 
 function f_find() {
-
+    let inner = "";
+    let find_item = prompt(`Значения для поиска в маcсиве ${numbers}`);
+    for (const x of numbers) {
+        if (find_item == x) {
+            console.log(x);
+            inner += `<p>${x}</p>`;
+            break;
+        }
+    }
+    document.getElementById("find").innerHTML = inner;
 }
 
 
 function f_findIndex() {
-
-}
-
-
-function inner_html(div_id, fun) {
-    document.getElementById(div_id).innerHTML = fun + '\n';
-}
-
-function inner_promt() {
-
+    let inner = "";
+    let find_item = prompt(`Введите индекс для поиска в массиве ${numbers}`);
+    if (numbers[find_item]) {
+        console.log(numbers[find_item]);
+        inner += `<p>${numbers[find_item]}</p>`;
+    }
+    else {
+        console.log(-1);
+        inner += `<p>-1</p>`;
+    }
+    document.getElementById("findIndex").innerHTML = inner;
 }
