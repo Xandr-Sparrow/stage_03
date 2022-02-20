@@ -7,16 +7,31 @@
 let numbers = [4, 3, 10, 14, 32];
 
 function f_some() {
-
+    let inner = "";
+    let find_item = prompt(`Значения для поиска в маcсиве ${numbers}`);
+    for (const x of numbers) {
+        if (find_item == x) {
+            console.log(true);
+            inner += `<p>true</p>`;
+            break;
+        } else {
+            console.log(false);
+            inner += `<p>false</p>`;
+            break;
+        }
+    }
+    document.getElementById("some").innerHTML = inner;
 }
 
 
 function f_split() {
-    let numbers_ = prompt(`Ведите цифры через пробел`, numbers);
-    let inner = "";
-    console.log(numbers);
-    inner += `<p>${numbers}</p>`;
-    document.getElementById("split").innerHTML = inner;
+    let numbers_ = prompt(`Ведите цифры через пробел`, `4 3 10 14 32`);
+    let reg = /\s?\d+\s?/g;
+    let result = numbers_.matchAll(reg);
+    result = Array.from(result);
+    numbers = result;
+    console.log(result);
+    document.getElementById("split").innerHTML = result;
 }
 
 
