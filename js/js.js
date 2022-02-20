@@ -12,7 +12,11 @@ function f_some() {
 
 
 function f_split() {
-
+    let numbers_ = prompt(`Ведите цифры через пробел`, numbers);
+    let inner = "";
+    console.log(numbers);
+    inner += `<p>${numbers}</p>`;
+    document.getElementById("split").innerHTML = inner;
 }
 
 
@@ -72,8 +76,7 @@ function f_findIndex() {
     if (numbers[find_item]) {
         console.log(numbers[find_item]);
         inner += `<p>${numbers[find_item]}</p>`;
-    }
-    else {
+    } else {
         console.log(-1);
         inner += `<p>-1</p>`;
     }
