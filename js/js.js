@@ -11,21 +11,23 @@ function f_some() {
     let find_item = prompt(`Значения для поиска в маcсиве ${numbers}`);
     for (const x of numbers) {
         if (find_item == x) {
+            inner = "";
             console.log(true);
             inner += `<p>true</p>`;
             break;
-        } else {
+        } else if (find_item !== x) {
+            inner = "";
             console.log(false);
             inner += `<p>false</p>`;
-            break;
         }
     }
     document.getElementById("some").innerHTML = inner;
 }
 
 
+
 function f_split() {
-    let numbers_ = prompt(`Ведите цифры через пробел`, `4 3 10 14 32`);
+    let numbers_ = prompt(`Ведите цифры через пробел. Значение меняется для всех функций`, `4 3 10 14 32`);
     let reg = /\s?\d+\s?/g;
     let result = numbers_.matchAll(reg);
     result = Array.from(result);
@@ -36,7 +38,21 @@ function f_split() {
 
 
 function f_include() {
-
+    let inner = "";
+    let find_item = prompt(`Значения для поиска в маcсиве ${numbers}`);
+    for (const x of numbers) {
+        if (find_item == x) {
+            inner = "";
+            console.log(true);
+            inner += `<p>true</p>`;
+            break;
+        } else if (find_item !== x) {
+            inner = "";
+            console.log(false);
+            inner += `<p>false</p>`;
+        }
+    }
+    document.getElementById("include").innerHTML = inner;
 }
 
 
